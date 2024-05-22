@@ -9,7 +9,9 @@ const Model : React.FC<IModelProps> = ({model,toggleModel,carrito ,eliminar,vaci
     {carrito?.map((item)=>(
       <div className='flex items-center m-4 flex-grow bg-slate-300 rounded-md w-[90%] justify-between overflow-y-auto max-h-[100px]' key={item.id}>
         <div className="flex items-center space-x-8"><img className="w-[100px] h-[100px]  rounded-md  border border-slate-300" src={item.thumbnail}/>
-         <h1 key={item.id} className="text-black">{item.title}</h1>
+         <div className=''><h1 className="text-black">{item.title}</h1>
+          <strong className='text-black'>X{item.quantity}</strong>
+         </div>
          <h1><strong className='text-black'>{item.price}$</strong></h1>
         </div>
        <button onClick={()=>eliminar(item.id)}  className="p-3 bg-slate-800 rounded-md m-4 hover:bg-slate-900 active:border active:translate-y-0.5">Eliminar</button>

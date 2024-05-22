@@ -4,6 +4,7 @@ export interface Producto {
     title: string;
     price: number;
     thumbnail: string;
+    quantity? : number;
     description: string;
   }
 
@@ -11,6 +12,7 @@ export interface Producto {
     model: boolean;
     toggleModel: () => boolean;
     carrito?: Producto[];
+    
     children?: React.ReactNode;
     eliminar: (id: number) => void;
     vaciar: () => void;
@@ -19,6 +21,7 @@ export interface Producto {
   export interface ICarrito {
     carrito: Producto[];
     items: number;
+    
     total: number;
     setCarrito: (producto: Producto) => void;
     eliminar: (id: number) => void;
